@@ -48,12 +48,25 @@ plt.xlim(left=0)
 plt.yticks(fontsize=12)
 
 plt.grid(axis='y', alpha=0.3)
+text_box = "Median: " + str(statistics['median']) + "\nMean: " + str(statistics['mean']) + "\nStd: " + str(statistics['std'])
+
+plt.text(
+    x=0.75, y=0.9,
+    s=text_box,
+    transform=plt.gca().transAxes,
+    bbox=dict(facecolor='white', edgecolor='black', boxstyle='round'),
+    fontsize=16,
+    verticalalignment='top',
+    horizontalalignment='left'
+)
 
 plt.tight_layout()
 
 plt.savefig('C:/Users/Juan!/Desktop/Juan/Git/90s_movie_durations_histogram.png', dpi=300, bbox_inches='tight')
 
 plt.show()
+
+
 
 
 
