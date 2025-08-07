@@ -21,7 +21,7 @@ netflix_movies = netflix_subset[['title', 'country', 'genre', 'release_year', 'd
 netflix_movies_90=netflix_movies[(netflix_movies['release_year']>=1990) & (netflix_movies['release_year']<2000)]
 print(netflix_movies_90.head()) # Preview the DataFrame
 
-statistics=netflix_movies_90['duration'].agg(['mean','std']).round(2) # Just to get a sense of mean and std
+statistics=netflix_movies_90['duration'].agg(['median','mean','std']).round(2) # Just to get a sense of mean and std
 print(statistics)
 
 #At this point it's better to visualize the data, let's generate a histogram with bins grouping movies by duration with size of 10 minutes 
@@ -54,6 +54,7 @@ plt.tight_layout()
 plt.savefig('C:/Users/Juan!/Desktop/Juan/Git/90s_movie_durations_histogram.png', dpi=300, bbox_inches='tight')
 
 plt.show()
+
 
 
 
