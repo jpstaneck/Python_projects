@@ -24,10 +24,16 @@ print(netflix_movies_90.head()) # Preview the DataFrame
 statistics=netflix_movies_90['duration'].agg(['median','mean','std']).round(0)  # A sense of the distribution
 statistics=statistics.astype(int)
 
-duration=statistics['median'] # Answer to question 1
+duration=statistics['median']                                                               # Answer to question 1
 print("The most frequent movie duration in the 1990's was " + str(duration) + " minutes.")  # Answer to question 1
+# The most frequent movie duration in the 1990s was 108 minutes                            # Answer to question 1
 
-#At this point it's better to visualize the data, let's generate a histogram with bins grouping movies by duration with size of 10 minutes 
+short_action_movies=netflix_movies_90[(netflix_movies_90['genre']=='Action') & (netflix_movies_90['duration']<90)] 
+short_movie_count=short_action_movies.count()                                        # Answer to question 2
+print(str(short_movie_count['title']) + " short movies were released in the 1990s.") # Answer to question 2
+# 8 short movies were released in the 1990s                                          # Answer to question 2
+
+# To visualize the distribution of movie durations in the 1990's, let's generate a histogram with bins grouping movies by duration with size of 10 minutes 
 
 plt.figure(figsize=(12,6))
 
@@ -68,6 +74,7 @@ plt.tight_layout()
 plt.savefig('C:/Users/Juan!/Desktop/Juan/Git/90s_movie_durations_histogram.png', dpi=300, bbox_inches='tight')
 
 plt.show()
+
 
 
 
