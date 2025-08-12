@@ -49,4 +49,21 @@ counts = nobel['full_name'].value_counts()
 repeats = counts[counts >= 2].index
 repeat_list = list(repeats)
 print("\n The repeat winners are :", repeat_list)
+
 # The repeat winners are : ['Comité international de la Croix Rouge (International Committee of the Red Cross)', 'Linus Carl Pauling', 'John Bardeen', 'Frederick Sanger', 'Marie Curie, née Sklodowska', 'Office of the United Nations High Commissioner for Refugees (UNHCR)']
+
+"Some Visuals"
+
+# winners_yearly=nobel.groupby(['decade', 'sex']).size().reset_index(name='count')
+# sns.lineplot(data=winners_yearly, x='decade', y='count', hue='sex',style='sex',  markers=True,  
+#     palette={'Male': 'blue', 'Female': 'red'},
+#     linewidth=2.5)
+
+# plt.title("Nobel Prize Winners by Gender (1901-2020)")
+# plt.ylabel("Number of Winners")
+# plt.xlabel("Year")
+# plt.grid(True, linestyle="--", alpha=0.7)
+
+# plt.savefig('C:/Users/Juan!/Desktop/Juan/Git/Nobel Prize Winners by Gender.png', dpi=300, bbox_inches='tight')
+
+# plt.show()
